@@ -54,10 +54,19 @@ if (app.Environment.IsDevelopment())
 app.UseAuthorization();
 app.MapControllers();
 
-using (var scope = app.Services.CreateScope())
+Console.WriteLine("--- Intentando conectar a la BD y ejecutar seeding ---");
+try
 {
-    var dbContext = scope.ServiceProvider.GetRequiredService<AlphaDbContext>();
-    await SofipoSeeder.SeedAsync(dbContext);
+    using (var scope = app.Services.CreateScope())
+    {
+        var dbContext = scope.ServiceProvider.GetRequiredService<AlphaDbContext>();
+        await SofipoSeeder.SeedAsync(dbContext);
+    }
+    Console.WriteLine("--- Seeding completado o saltado ---");
+}
+catch (Exception ex)
+{
+    Console.WriteLine($"--- Error al ejecutar seeding: {ex.Message} ---");
 }
 
 app.Run();
