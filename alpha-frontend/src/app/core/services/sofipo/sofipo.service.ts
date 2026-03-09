@@ -8,6 +8,14 @@ export interface SofipoItemDto {
   name: string;
 }
 
+export interface TieredInterestRule {
+  id: number;
+  institutionId: number;
+  limitAmount: number;
+  primaryRate: number;
+  fallbackRate: number;
+}
+
 export interface SimulationRequestDto {
   institutionId: number;
   investmentAmount: number;
