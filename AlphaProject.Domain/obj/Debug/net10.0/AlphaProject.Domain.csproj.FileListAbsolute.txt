@@ -1,0 +1,11 @@
+C:\Users\Rafae\Downloads\NET\AlphaProject\AlphaProject.Domain\bin\Debug\net10.0\AlphaProject.Domain.deps.json
+C:\Users\Rafae\Downloads\NET\AlphaProject\AlphaProject.Domain\bin\Debug\net10.0\AlphaProject.Domain.dll
+C:\Users\Rafae\Downloads\NET\AlphaProject\AlphaProject.Domain\bin\Debug\net10.0\AlphaProject.Domain.pdb
+C:\Users\Rafae\Downloads\NET\AlphaProject\AlphaProject.Domain\obj\Debug\net10.0\AlphaProject.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Rafae\Downloads\NET\AlphaProject\AlphaProject.Domain\obj\Debug\net10.0\AlphaProject.Domain.AssemblyInfoInputs.cache
+C:\Users\Rafae\Downloads\NET\AlphaProject\AlphaProject.Domain\obj\Debug\net10.0\AlphaProject.Domain.AssemblyInfo.cs
+C:\Users\Rafae\Downloads\NET\AlphaProject\AlphaProject.Domain\obj\Debug\net10.0\AlphaProject.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Rafae\Downloads\NET\AlphaProject\AlphaProject.Domain\obj\Debug\net10.0\AlphaProject.Domain.dll
+C:\Users\Rafae\Downloads\NET\AlphaProject\AlphaProject.Domain\obj\Debug\net10.0\refint\AlphaProject.Domain.dll
+C:\Users\Rafae\Downloads\NET\AlphaProject\AlphaProject.Domain\obj\Debug\net10.0\AlphaProject.Domain.pdb
+C:\Users\Rafae\Downloads\NET\AlphaProject\AlphaProject.Domain\obj\Debug\net10.0\ref\AlphaProject.Domain.dll
