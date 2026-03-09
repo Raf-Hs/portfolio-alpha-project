@@ -1,0 +1,55 @@
+<div class="dashboard-container">
+  <header class="dashboard-header">
+    <h2>Motor de Proyección Alpha</h2>
+    <p>Simulador de Interés Compuesto</p>
+  </header>
+
+  <form [formGroup]="form" (ngSubmit)="calculate()" class="projection-form">
+    <div class="form-group">
+      <label>Capital Inicial ($)</label>
+      <input type="number" formControlName="initialCapital" placeholder="Ej. 10000" />
+    </div>
+    <div class="form-group">
+      <label>Tasa Anual (%)</label>
+      <input type="number" formControlName="annualInterestRate" placeholder="Ej. 15" />
+    </div>
+    <div class="form-group">
+      <label>Plazo (Meses)</label>
+      <input type="number" formControlName="termInMonths" placeholder="Ej. 12" />
+    </div>
+    <div class="form-actions">
+      <button type="submit" [disabled]="form.invalid || isLoading()" class="btn-primary">
+        @if (isLoading()) { Calculando... } @else { Generar Corrida }
+      </button>
+    </div>
+  </form>
+
+  @if (error()) {
+    <div class="alert alert-error">{{ error() }}</div>
+  }
+
+  @if (projectionData().length > 0) {
+    <div class="table-responsive">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Mes</th>
+            <th>Saldo Inicial</th>
+            <th>Interés Ganado</th>
+            <th>Saldo Final</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (row of projectionData(); track row.period) {
+            <tr>
+              <td>{{ row.period }}</td>
+              <td>{{ row.startingBalance | currency }}</td>
+              <td class="text-success">+{{ row.interestEarned | currency }}</td>
+              <td class="font-bold">{{ row.endingBalance | currency }}</td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  }
+</div>
