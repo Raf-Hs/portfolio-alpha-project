@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AlphaProject.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e02cbdbbbea346aa7c12d07e2f95e2581db4a6e4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0a8a8a751796571932ca8b3cf1dd888d9631b077")]
 [assembly: System.Reflection.AssemblyProductAttribute("AlphaProject.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AlphaProject.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
