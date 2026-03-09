@@ -1,6 +1,9 @@
 using AlphaProject.Application.Services;
 using AlphaProject.Domain.Interfaces;
 using AlphaProject.Domain.Services;
+using AlphaProject.Domain.Strategies;
+using AlphaProject.Infrastructure.Data;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,23 +14,31 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+// Database
+builder.Services.AddDbContext<AlphaDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
 // Tus servicios de dominio y aplicación
 builder.Services.AddScoped<IProjectionStrategy, CompoundInterestStrategy>();
 builder.Services.AddScoped<IProjectionAppService, ProjectionAppService>();
 
+// Sofipo services
+builder.Services.AddScoped<ISofipoYieldStrategy, SofipoYieldStrategy>();
+builder.Services.AddScoped<ISofipoAppService, SofipoAppService>();
+
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowAngular", policy =>
+    options.AddPolicy("AllowAll", policy =>
     {
-        policy.WithOrigins("https://portfolio-alpha-project.vercel.app") // El puerto de tu frontend
-              .AllowAnyHeader()
-              .AllowAnyMethod();
+        policy.AllowAnyOrigin()
+              .AllowAnyMethod()
+              .AllowAnyHeader();
     });
 });
 
 var app = builder.Build();
 
-app.UseCors("AllowAngular");
+app.UseCors("AllowAll");
 
 // --- 2. CONFIGURACIÓN DEL PIPELINE HTTP (Middlewares) ---
 if (app.Environment.IsDevelopment())
@@ -42,5 +53,11 @@ if (app.Environment.IsDevelopment())
 
 app.UseAuthorization();
 app.MapControllers();
+
+using (var scope = app.Services.CreateScope())
+{
+    var dbContext = scope.ServiceProvider.GetRequiredService<AlphaDbContext>();
+    await SofipoSeeder.SeedAsync(dbContext);
+}
 
 app.Run();

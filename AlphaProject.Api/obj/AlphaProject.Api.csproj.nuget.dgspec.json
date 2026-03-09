@@ -59,11 +59,17 @@
           "dependencies": {
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
-              "version": "[10.0.3, )"
+              "version": "[8.0.11, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.3, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[10.1.4, )"
+              "version": "[6.5.0, )"
             }
           },
           "imports": [
@@ -119,6 +125,9 @@
             "projectReferences": {
               "C:\\Users\\Rafae\\Downloads\\NET\\AlphaProject\\AlphaProject.Domain\\AlphaProject.Domain.csproj": {
                 "projectPath": "C:\\Users\\Rafae\\Downloads\\NET\\AlphaProject\\AlphaProject.Domain\\AlphaProject.Domain.csproj"
+              },
+              "C:\\Users\\Rafae\\Downloads\\NET\\AlphaProject\\AlphaProject.Infrastructure\\AlphaProject.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\Rafae\\Downloads\\NET\\AlphaProject\\AlphaProject.Infrastructure\\AlphaProject.Infrastructure.csproj"
               }
             }
           }
@@ -138,6 +147,12 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.11, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -251,8 +266,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\Rafae\\Downloads\\NET\\AlphaProject\\AlphaProject.Application\\AlphaProject.Application.csproj": {
-                "projectPath": "C:\\Users\\Rafae\\Downloads\\NET\\AlphaProject\\AlphaProject.Application\\AlphaProject.Application.csproj"
+              "C:\\Users\\Rafae\\Downloads\\NET\\AlphaProject\\AlphaProject.Domain\\AlphaProject.Domain.csproj": {
+                "projectPath": "C:\\Users\\Rafae\\Downloads\\NET\\AlphaProject\\AlphaProject.Domain\\AlphaProject.Domain.csproj"
               }
             }
           }
@@ -272,6 +287,22 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.11, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.11, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[8.0.11, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { ProjectionDashboard } from './features/projections/projection-dashboard/projection-dashboard';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [ProjectionDashboard],
-  templateUrl: './app.html' // <- Referencia arreglada
+  imports: [RouterOutlet],
+  templateUrl: './app.html'
 })
-export class App { // <- Nombre de clase arreglado para que main.ts compile
+export class App {
 }
