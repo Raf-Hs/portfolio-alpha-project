@@ -19,7 +19,7 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAngular", policy =>
     {
-        policy.WithOrigins("http://localhost:4200") // El puerto de tu frontend
+        policy.WithOrigins("https://portfolio-alpha-project.vercel.app") // El puerto de tu frontend
               .AllowAnyHeader()
               .AllowAnyMethod();
     });
